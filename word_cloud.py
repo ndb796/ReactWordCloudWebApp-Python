@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 from flask import Flask, request, jsonify
 
 # 플라스크 웹 서버 객체를 생성합니다.
-app = Flask(__name__)
+app = Flask(__name__, static_folder='outputs')
 
 # 폰트 경로 설정
 font_path = 'NanumGothic.ttf'
@@ -51,7 +51,7 @@ def make_cloud_image(tags, file_name):
     fig.savefig("outputs/{0}.png".format(file_name))
 
 
-def process_from_text(text, max_count, min_length, words):
+def process_from_text(text, max_count, min_length, words, file_name):
     # 최대 max_count 개의 단어 및 등장 횟수를 추출합니다.
     tags = get_tags(text, max_count, min_length)
     # 단어 가중치를 적용합니다.
@@ -59,7 +59,7 @@ def process_from_text(text, max_count, min_length, words):
         if n in tags:
             tags[n] = tags[n] * int(words[n])
     # 명사의 출현 빈도 정보를 통해 워드 클라우드 이미지를 생성합니다.
-    make_cloud_image(tags, "output")
+    make_cloud_image(tags, file_name)
 
 
 @app.route("/process", methods=['GET', 'POST'])
@@ -69,9 +69,15 @@ def process():
     if content['words'] is not None:
         for data in content['words'].values():
             words[data['word']] = data['weight']
-    process_from_text(content['text'], content['maxCount'], content['minLength'], words)
+    process_from_text(content['text'], content['maxCount'], content['minLength'], words, content['textID'])
     result = {'result': True}
     return jsonify(result)
+
+
+@app.route('/outputs', methods=['GET', 'POST'])
+def output():
+    text_id = request.args.get('textID')
+    return app.send_static_file(text_id + '.png')
 
 
 if __name__ == '__main__':
