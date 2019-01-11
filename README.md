@@ -19,5 +19,5 @@ python word_cloud.py
 ```
 > [워드 클라우드 보기] URL: http://localhost:5000/outputs
 ```
-
+http://localhost:5000/outputs?textID=1
 ```
