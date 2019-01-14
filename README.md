@@ -1,5 +1,16 @@
 ## 리액트 워드 클라우드 웹 앱 프로젝트: Flask Python 모듈
 
+### 사전 구성요소
+* 파이썬(Python) 다운로드: 3.7.2 Version
+* 깃(Git) 클라이언트 다운로드: 2.20 Version
+* Microsoft Visual C++ 14.0 다운로드
+```
+pip3 install wordcloud
+pip3 install konlpy
+pip3 install matplotlib
+pip3 install flask
+pip3 install flask_cors
+```
 ### API 구축 방법
 ```
 git clone https://github.com/ndb796/ReactWordCloudWebApp-Python.git
