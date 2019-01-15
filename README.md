@@ -4,6 +4,7 @@
 * 파이썬(Python) 다운로드: 3.7.2 Version
 * 깃(Git) 클라이언트 다운로드: 2.20 Version
 * Microsoft Visual C++ 14.0 다운로드
+* Java 설치 및 환경변수 등록
 ```
 pip3 install wordcloud
 pip3 install konlpy
