@@ -12,6 +12,7 @@ pip3 install matplotlib
 pip3 install flask
 pip3 install flask_cors
 ```
+* OS와 Java 및 Python의 비트(Bit)를 맞추기
 ### API 구축 방법
 ```
 git clone https://github.com/ndb796/ReactWordCloudWebApp-Python.git
