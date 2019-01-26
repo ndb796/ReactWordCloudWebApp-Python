@@ -8,6 +8,8 @@
 ```
 # 리눅스 sudo apt-get update
 # 리눅스 sudo apt-get install python3-pip
+# 리눅스 sudo apt-get install openjdk-8-jre
+# 리눅스 sudo apt-get install openjdk-8-jdk
 pip3 install wordcloud
 pip3 install konlpy
 pip3 install matplotlib
