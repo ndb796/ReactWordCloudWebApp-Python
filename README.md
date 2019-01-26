@@ -6,6 +6,8 @@
 * Microsoft Visual C++ 14.0 다운로드
 * Java 설치 및 환경변수 등록
 ```
+# 리눅스 sudo apt-get update
+# 리눅스 sudo apt-get install python3-pip
 pip3 install wordcloud
 pip3 install konlpy
 pip3 install matplotlib
@@ -17,7 +19,10 @@ pip3 install flask_cors
 ```
 git clone https://github.com/ndb796/ReactWordCloudWebApp-Python.git
 cd ReactWordCloudWebApp-Python
-python word_cloud.py
+# 리눅스 sudo python3 word_cloud.py
+# 리눅스의 경우 [Ctrl + z] - [bg] - [disown -h]으로 항상 실행
+# 윈도우 python word_cloud.py
+# AWS EC2를 사용하는 경우 [보안 그룹] - [인바운드] - [편집] - 포트 열기
 ```
 ### API 호출 예제
 > [워드 클라우드 생성] URL: http://localhost:5000/process
